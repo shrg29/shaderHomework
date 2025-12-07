@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dt58pdl8lgtis"]
+
+[ext_resource type="Shader" uid="uid://5x1n10idi0k6" path="res://newShader.gdshader" id="1_15f38"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0a8ph"]
+render_priority = 0
+shader = ExtResource("1_15f38")
+shader_parameter/grid_scale = 3.0
+shader_parameter/octaves = 4
+shader_parameter/lacunarity = 2.5
+shader_parameter/gain = 0.8
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qnlvn"]
+material = SubResource("ShaderMaterial_0a8ph")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.008580029)
+mesh = SubResource("PlaneMesh_qnlvn")
